@@ -1,21 +1,30 @@
 <!doctype html>
 <html ng-app="project">
-  <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-resource.min.js">
-    </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.min.js">
-   </script>
-    <script src="https://cdn.firebase.com/js/client/2.0.4/firebase.js"></script>
-    <script src="https://cdn.firebase.com/libs/angularfire/0.9.0/angularfire.min.js"></script>
-    <link rel="stylesheet" href="bootstrap.css">
-    <script src="project.js"></script>
-  </head>
-  <body>
-	  <h2>What is your wish?</h2>
-    <input type="text" ng-model="yourWish" placeholder="Write it here.">
-	<button type="submit" ng-model="yourWish">
-		<img src="http://previews.123rf.com/images/gorbovoi81/gorbovoi811402/gorbovoi81140200016/26017192-Doodle-style-genie-aladdin-s-lamp-vector-illustration-Stock-Vector.jpg" style="width:100px;height:auto;"><br />Rub Lamp</button>
-    <div ng-view></div>
-  </body>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-resource.min.js">
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.min.js">
+	</script>
+	<script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+	<script src="https://cdn.firebase.com/libs/angularfire/0.9.0/angularfire.min.js"></script>
+	<link rel="stylesheet" href="bootstrap.css">
+	<link rel="stylesheet" href="bootstrap-theme.css">
+	<script src="wishes.js"></script>
+</head>
+<body>
+	<div class="container theme-showcase" role="main">
+		<div class="jumbotron" style="margin-top:20px;">
+			<h2>What job characteristics might make you switch from your current role?</h2>
+			<form name="info-form">
+				<input type="text" ng-model="yourWish" style="width:300px;" placeholder="Tell me anonymously.">
+				<input type="text" ng-model="yourWish" style="width:200px;" placeholder="What do you currently do?">
+				<input type="text" ng-model="yourWish" style="width:200px;" placeholder="Confirm with your email.">
+				<button type="submit" ng-click="editProject.save()" ng-disabled="myForm.$invalid" class="btn btn-primary" style="border-radius:10px;">
+					<img src="magic-lamp.png" /><br />Click to tell<br />the HR Genie
+				</button>
+			</form>
+		</div>
+	</div>
+</body>
 </html>
